@@ -1,0 +1,5 @@
+# property.te
+
+type keyprovd_prop, property_type;
+type trimarea_prop, property_type;
+type oem_prop, property_type;
