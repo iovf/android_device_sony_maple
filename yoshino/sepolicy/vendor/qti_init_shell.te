@@ -1,3 +1,0 @@
-# qti_init_shell.te
-
-set_prop(qti_init_shell, oem_prop)

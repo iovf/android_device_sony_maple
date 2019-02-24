@@ -1,3 +1,0 @@
-# hal_sensors_default.te
-
-get_prop(hal_sensors_default, sony_prop)

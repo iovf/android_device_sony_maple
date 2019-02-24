@@ -1,17 +1,6 @@
 repo init -u git://github.com/LineageOS/android.git -b lineage-15.1
 
-
-vim .repo/local_manifests/roomservice.xml
-
-  <?xml version="1.0" encoding="UTF-8"?>
-  <manifest>
-      <!-- SONY -->
-      <project name="cryptomilk/android_kernel_sony_msm8998" path="kernel/sony/msm8998" remote="github" />
-      <project name="iovf/android_device_sony" path="device/sony" remote="github" revision="8.1"/>
-      <project name="omnirom/android_bootable_recovery" path="boottable/recovery-twrp" remote="github" revision="8.1"/>
-  </manifest>
-
-repo sync
+kernel https://github.com/cryptomilk/android_kernel_sony_msm8998
 
 export WITH_TWRP=true
 export ALLOW_MISSING_DEPENDENCIES=true

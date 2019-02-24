@@ -1,3 +1,0 @@
-# hal_cas_default.te
-
-vndbinder_use(hal_cas_default)

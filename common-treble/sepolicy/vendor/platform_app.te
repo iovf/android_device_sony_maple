@@ -1,3 +1,0 @@
-# platform_app.te
-
-get_prop(platform_app, semc_version_prop)
