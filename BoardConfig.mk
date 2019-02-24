@@ -14,7 +14,6 @@
 # limitations under the License.
 
 ### INHERIT FROM YOSHIRO
-
 TARGET_RECOVERY_DEVICE_DIRS += device/sony/maple/proprietary
 TARGET_COMPILE_WITH_MSM_KERNEL := true
 DEVICE_PATH := device/sony/maple
@@ -31,7 +30,6 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
 BOARD_CACHEIMAGE_PARTITION_SIZE := 398458880
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 7707033600
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
-# Reserve space for data encryption (54587760640-32768)
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 54587727872
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_ROOT_EXTRA_FOLDERS := \
@@ -45,7 +43,6 @@ BOARD_ROOT_EXTRA_FOLDERS := \
     rca
 
 # vendor
-BOARD_NEEDS_VENDORIMAGE_SYMLINK := false
 TARGET_COPY_OUT_VENDOR := system/vendor
 TARGET_USES_CASH_EXTENSION := true
 
@@ -99,33 +96,26 @@ DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
 ### TWRP
 # Do not go full treble for recovery
 PRODUCT_FULL_TREBLE_OVERRIDE := false
-
 RECOVERY_VARIANT := twrp
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/twrp.fstab
-
 ### INIT
 # Use rootdir/init.recovery.usb.rc
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TARGET_RECOVERY_DEVICE_MODULES := init.recovery.usb.rc
-
 ### QCOM
 TARGET_RECOVERY_QCOM_RTC_FIX := true
-TW_TARGET_USES_QCOM_BSP := true
+#TW_TARGET_USES_QCOM_BSP := true
 TW_NEW_ION_HEAP := true
-
 ### SCREEN BRIGHTNESS
 TW_BRIGHTNESS_PATH := /sys/class/leds/wled/brightness
 TW_MAX_BRIGHTNESS := 4095
 TW_DEFAULT_BRIGHTNESS := 1600
 TW_CUSTOM_CPU_TEMP_PATH := /sys/class/thermal/thermal_zone4/temp
-
 # Add logcat support
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
-
 # Use toolbox instead of busybox
 TW_USE_TOOLBOX := true
-
 # Does not allow to partition the sdcard
 BOARD_HAS_NO_REAL_SDCARD := true
 # Media on data partition
@@ -133,11 +123,9 @@ RECOVERY_SDCARD_ON_DATA := true
 
 ### ENCRYPTED FILESYSTEMS
 TW_INCLUDE_CRYPTO := true
-# ext4 file based crypto
 TW_INCLUDE_CRYPTO_FBE := true
 # vendor/qcom/opensource/cryptfs_hw
 TARGET_HW_DISK_ENCRYPTION := true
-
 # Add strace
 TARGET_RECOVERY_DEVICE_MODULES      += strace
 TW_RECOVERY_ADDITIONAL_RELINK_FILES += $(OUT)/system/xbin/strace
@@ -158,7 +146,6 @@ PLATFORM_SECURITY_PATCH := 2025-12-31
 ### BOARD
 BOARD_USES_QCOM_HARDWARE := true
 BOARD_VENDOR := sony
-
 ### CHARGER
 WITH_LINEAGE_CHARGER := false
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
