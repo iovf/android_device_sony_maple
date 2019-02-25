@@ -1,3 +1,9 @@
+only build twrp
+can 
+
+aroma
+adb sideload
+
 repo init -u git://github.com/LineageOS/android.git -b lineage-16.0
 
 kernel https://github.com/cryptomilk/android_kernel_sony_msm8998
