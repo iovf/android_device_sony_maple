@@ -126,6 +126,7 @@ TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_CRYPTO_FBE := true
 # vendor/qcom/opensource/cryptfs_hw
 TARGET_HW_DISK_ENCRYPTION := true
+# NEED_KERNEL_MODULE_ROOT := true
 # Add strace
 #TARGET_RECOVERY_DEVICE_MODULES      += strace
 #TW_RECOVERY_ADDITIONAL_RELINK_FILES += $(OUT)/system/xbin/strace
