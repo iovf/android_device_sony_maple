@@ -5,6 +5,7 @@ aroma
 adb sideload
 
 repo init -u git://github.com/LineageOS/android.git -b lineage-16.0
+rm -rf hardware/qcom/camera/msm8998/QCamera2
 
 kernel https://github.com/cryptomilk/android_kernel_sony_msm8998
 
