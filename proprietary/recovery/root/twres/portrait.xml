@@ -480,7 +480,7 @@
 
 			<button style="main_button_half_height">
 				<placement x="%indent%" y="%row21a_y%"/>
-				<text>{@wipe_cache_dalvik_btn=Wipe cache/dalvik}</text>
+				<text>{@wipe_cache_dalvik_btn=Wipe Cache/Dalvik}</text>
 				<actions>
 					<action function="set">tw_back=flash_done</action>
 					<action function="set">tw_action=wipe</action>
