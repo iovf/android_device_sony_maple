@@ -1,13 +1,22 @@
 only build twrp
-can 
+For sony maple (G8141/8142)
 
-aroma
-adb sideload
 
+#LINEAGEOS
 repo init -u git://github.com/LineageOS/android.git -b lineage-16.0
+repo sync
 rm -rf hardware/qcom/camera/msm8998/QCamera2
+#TWRP
+rm -rf bootable/recovery
+git clone https://github.com/omnirom/android_bootable_recovery.git bootable/recovery
+need patch partition.cpp & partitionmanager.cpp
 
-kernel https://github.com/cryptomilk/android_kernel_sony_msm8998
+#kernel
+git clone https://github.com/iovf/android-kernel-sony-msm8998.git kernel/sony/msm8998
+
+#and this
+git clone https://github.com/iovf/android-kernel-sony-msm8998.git /device/sony/maple
+
 
 export ALLOW_MISSING_DEPENDENCIES=true
 source build/envsetup.sh
